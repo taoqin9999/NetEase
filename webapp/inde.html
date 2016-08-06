@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="UTF-8" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <base href="./" />
+    <!-- Core Javascript Files-->
+    <script charset="utf-8" src="lib/jquery.js"></script>
+    <script charset="utf-8" src="lib/lodash-2.4.1.js"></script>
+    <script charset="utf-8" src="../build/dist/net_ease.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        netEase.recommendApp.getRecommendList().done(function(resp) {
+            document.writeln(JSON.stringify(resp));
+        });
+
+    };
+    </script>
+</head>
+</head>
+
+<body id="root" style="margin: 0em;">
+    <page>
+        <div id="hideAutoFocus"></div>
+    </page>
+</body>
+
+</html>

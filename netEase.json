@@ -1,5 +1,6 @@
 {
     "src": [
+        "webapp/lib/plugins.js",
         "webapp/src/utils/main.js",
         "webapp/src/data/**/*.js",
         "webapp/src/utils/config.js",
@@ -9,7 +10,7 @@
         "webapp/src/utils/EventManager.js",
         "webapp/src/app/*"
     ],
-    "build": "webapp/build",
-    "dest": "webapp/build/dist/net_ease.js",
-    "min": "webapp/build/dist/net_ease.main.js"
+    "build": "build",
+    "dest": "build/dist/net_ease.js",
+    "min": "build/dist/net_ease.main.js"
 }

@@ -1,6 +1,10 @@
 module.exports = function(grunt) {
     'use strict';
 
+    require('load-grunt-tasks')(grunt, {
+        pattern: ['grunt-*', '!grunt-template-jasmine-istanbul']
+    });
+
     require('time-grunt')(grunt);
 
     grunt.initConfig({
@@ -52,14 +56,6 @@ module.exports = function(grunt) {
             }
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-jsduck');
 
     grunt.registerTask('doc', ['jsduck']);
     grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'doc']);

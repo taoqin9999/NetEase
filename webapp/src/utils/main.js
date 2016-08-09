@@ -4,7 +4,7 @@
  * @class netEase
  * @singleton
  */
-var netEase = (function(core) {
+var netEase = (function() {
     'use strict';
 
     return {};

@@ -13,6 +13,7 @@ var netEase = (function(core) {
             url: core.config.newshotDataUrl,
             data: req
         }).done(function(resp) {
+            core.log('resp begin:')
             core.log(resp);
         }).fail(function(resp) {
             core.error(resp);

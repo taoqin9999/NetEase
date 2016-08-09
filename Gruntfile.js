@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         netEase: grunt.file.readJSON('netEase.json'),
-        'clean': {
+        clean: {
             'options': {
                 'force': true
             },
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         },
         jsduck: {
             main: {
-                src: ['<%= netEase.src %>'],
+                src: ['<%= netEase.doc %>'],
                 dest: '<%= netEase.build %>/dist/docs',
                 options: {
                     'title': 'netEase',

@@ -13,7 +13,11 @@
     <script charset="utf-8" src="../build/dist/net_ease.js"></script>
     <script type="text/javascript">
     window.onload = function() {
-        netEase.recommendApp.getRecommendList().done(function(resp) {
+        netEase.recommendApp.getRecommendList({
+            offset: 3110,
+            limit: 10
+        }).done(function(resp) {
+            console.log(resp);
             document.writeln(JSON.stringify(resp));
         });
 

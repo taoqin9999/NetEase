@@ -8,7 +8,7 @@ var netEase = (function(core) {
 
     var newshotApp = core.newshotApp = core.newshotApp || {};
 
-    var getNewshotList = function(req) {
+    newshotApp.getNewshotList = function(req) {
         return core.utils.ajax({
             url: core.config.newshotDataUrl,
             data: req
@@ -30,7 +30,7 @@ var netEase = (function(core) {
     newshotApp.getEntertainmentList = function(req) {
         req.channel = 2;
 
-        return getNewshotList(req);
+        return newshotApp.getNewshotList(req);
     };
 
     /**
@@ -43,7 +43,7 @@ var netEase = (function(core) {
     newshotApp.getSportsList = function(req) {
         req.channel = 3;
 
-        return getNewshotList(req);
+        return newshotApp.getNewshotList(req);
     };
 
 

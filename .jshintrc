@@ -92,6 +92,8 @@
         "_": true,
         "module": true,
 
+        "netEase": true,
+
         "describe": true,
         "it": true,
         "expect": true,

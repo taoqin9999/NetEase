@@ -20,8 +20,6 @@ var netEase = (function(core) {
         return core.utils.ajax({
             url: core.config.recommendDataUrl,
             data: req
-        }).done(function(resp) {
-            core.log(resp);
         }).fail(function(resp) {
             core.error(resp);
         });

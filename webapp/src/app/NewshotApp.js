@@ -12,9 +12,6 @@ var netEase = (function(core) {
         return core.utils.ajax({
             url: core.config.newshotDataUrl,
             data: req
-        }).done(function(resp) {
-            core.log('resp begin:');
-            core.log(resp);
         }).fail(function(resp) {
             core.error(resp);
         });

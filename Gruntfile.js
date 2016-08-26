@@ -54,6 +54,16 @@ module.exports = function(grunt) {
                     'builtin-classes': true
                 }
             }
+        },
+        /*http://ued.fanxing.com/javascriptdan-yuan-ce-shi-kuang-jia-jasmine/*/
+        jasmine: {
+            src: ['webapp/lib/jquery.js', 'webapp/lib/lodash-2.4.1.js', 'build/dist/net_ease.js'],
+            options: {
+                specs: 'test/spec/**/*.js',
+                keepRunner: true,
+                '--local-to-remote-url-access': true,
+                '--ignore-ssl-errors': true
+            }
         }
     });
 

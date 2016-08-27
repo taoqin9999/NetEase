@@ -59,7 +59,8 @@ module.exports = function(grunt) {
         jasmine: {
             src: ['webapp/lib/jquery.js', 'webapp/lib/lodash-2.4.1.js', 'build/dist/net_ease.js'],
             options: {
-                specs: 'test/spec/**/*.js',
+                specs: 'test/**/*Spec.js',
+                helpers: 'test/**/*Helper.js',
                 keepRunner: true,
                 '--local-to-remote-url-access': true,
                 '--ignore-ssl-errors': true

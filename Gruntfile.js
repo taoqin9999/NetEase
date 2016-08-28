@@ -24,7 +24,14 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                // 放在生成后的压缩文件的头部注释文案
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+                // 生成的map文件地址与源文件(src/1.js)的 相对路径
+                sourceMapRoot: '../../',
+                // 生成 map文件的地址
+                sourceMap: 'build/dist/net_ease.min.map',
+                // 用于定义 map文件地址 并放在压缩文件底部， url相对于 压缩文件(dist/mix.js)
+                sourceMappingURL: './net_ease.min.map'
             },
             dist: {
                 files: {

@@ -28,6 +28,22 @@ var netEase = (function(core) {
         ajaxAsync: false,
 
         /**
+         * Level of log to print.
+         *
+         *     netEase.config.logLevel = 'error';
+         *
+         * Could be:
+         *
+         * - debug
+         * - log
+         * - error
+         *
+         * @property logLevel
+         * @type {String}
+         */
+        logLevel: 'debug',
+
+        /**
          * 获取推荐内容url
          * @type {String}
          */

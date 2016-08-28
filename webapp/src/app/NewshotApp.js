@@ -6,6 +6,8 @@
 var netEase = (function(core) {
     'use strict';
 
+    var log = new core.Log('NewshotApp');
+
     var newshotApp = core.newshotApp = core.newshotApp || {};
 
     newshotApp.getNewshotList = function(req) {
@@ -13,7 +15,7 @@ var netEase = (function(core) {
             url: core.config.newshotDataUrl,
             data: req
         }).fail(function(resp) {
-            core.error(resp);
+            log.error(resp);
         });
     };
 

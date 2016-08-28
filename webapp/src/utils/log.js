@@ -4,21 +4,12 @@
 var netEase = (function(core) {
     'use strict';
 
-    /**
-     * Level of log to print.
-     *
-     *     netEase.logLevel = 'error';
-     *
-     * Could be:
-     *
-     * - debug
-     * - log
-     * - error
-     *
-     * @property logLevel
-     * @type {String}
-     */
-    core.logLevel = 'log';
+    var Log = core.Log = function(pageName) {
+        this.pageName = pageName || '';
+
+        this.pageName = 'page name:' + this.pageName + ';';
+    };
+
 
     /**
      * Print debug info.
@@ -27,11 +18,11 @@ var netEase = (function(core) {
      *
      * @param {String} info debug info
      */
-    core.debug = function() {
-        if (core.logLevel === 'debug') {
+    Log.prototype.debug = function() {
+        if (core.config.logLevel === 'debug') {
             var args = Array.prototype.slice.call(arguments);
 
-            args.unshift('netEase[debug]:');
+            args.unshift('netEase[debug]:' + this.pageName);
 
             console.debug.apply(console, args);
         }
@@ -44,12 +35,12 @@ var netEase = (function(core) {
      *
      * @param {String} info log info
      */
-    core.log = function() {
-        if (core.logLevel === 'debug' || core.logLevel === 'log') {
+    Log.prototype.log = function() {
+        if (core.config.logLevel === 'debug' || core.config.logLevel === 'log') {
             var args = Array.prototype.slice.call(arguments);
             var now = new Date();
 
-            args.unshift('netEase[log][' + now.toLocaleTimeString() + ' ' + now.getMilliseconds() + ']:');
+            args.unshift('netEase[log][' + now.toLocaleTimeString() + ' ' + now.getMilliseconds() + ']:' + this.pageName);
 
             console.log.apply(console, args);
         }
@@ -62,15 +53,16 @@ var netEase = (function(core) {
      *
      * @param {String} info error info
      */
-    core.error = function() {
-        if (core.logLevel === 'debug' || core.logLevel === 'log' || core.logLevel === 'error') {
+    Log.prototype.error = function() {
+        if (core.config.logLevel === 'debug' || core.config.logLevel === 'log' || core.config.logLevel === 'error') {
             var args = Array.prototype.slice.call(arguments);
 
-            args.unshift('netEase[error]:');
+            args.unshift('netEase[error]:' + this.pageName);
 
             console.error.apply(console, args);
         }
     };
+
 
     return core;
 }(netEase));

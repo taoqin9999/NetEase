@@ -11,6 +11,8 @@ var netEase = (function(core) {
         }
     };
 
+    var log = new core.Log('ajax');
+
     var ajax = function(req) {
         var retDfd = new $.Deferred(),
             client = new XMLHttpRequest(),
@@ -18,13 +20,13 @@ var netEase = (function(core) {
             handler = function() {
                 if (this.readyState === 4) {
                     clearTimeout(client.__timeoutIntervalId);
-                    core.debug('Ajax response: ' + this.responseText);
+                    log.debug('Ajax response: ' + this.responseText);
                     if (this.status === 200) {
                         if (req.dataType === 'json') {
                             try {
                                 response = JSON.parse(this.responseText);
                             } catch (exception) {
-                                core.error('Invalid json string', 'Request: ', JSON.stringify(req));
+                                log.error('Invalid json string', 'Request: ', JSON.stringify(req));
                                 retDfd.resolve({});
                             }
                             retDfd.resolve(response);
@@ -76,7 +78,7 @@ var netEase = (function(core) {
             });
         }
 
-        core.debug('Ajax request: ' + JSON.stringify(req.data || {}));
+        log.debug('Ajax request: ' + JSON.stringify(req.data || {}));
 
         if (req.type === 'GET') {
             client.send();

@@ -6,6 +6,8 @@
 var netEase = (function(core) {
     'use strict';
 
+    var log = new core.Log('RecommendApp');
+
     var recommendApp = core.recommendApp = core.recommendApp || {};
 
     /**
@@ -21,7 +23,7 @@ var netEase = (function(core) {
             url: core.config.recommendDataUrl,
             data: req
         }).fail(function(resp) {
-            core.error(resp);
+            log.error(resp);
         });
     };
 

@@ -21,6 +21,6 @@
         "webapp/src/app/*"
     ],
     "build": "build",
-    "dest": "build/dist/net_ease.js",
-    "min": "build/dist/net_ease.min.js"
+    "dest": "build/dist/netEase.js",
+    "min": "build/dist/netEase.min.js"
 }

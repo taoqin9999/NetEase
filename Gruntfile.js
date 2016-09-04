@@ -29,9 +29,9 @@ module.exports = function(grunt) {
                 // 生成的map文件地址与源文件(src/1.js)的 相对路径
                 sourceMapRoot: '../../',
                 // 生成 map文件的地址
-                sourceMap: 'build/dist/net_ease.min.map',
+                sourceMap: 'build/dist/netEase.min.map',
                 // 用于定义 map文件地址 并放在压缩文件底部， url相对于 压缩文件(dist/mix.js)
-                sourceMappingURL: './net_ease.min.map'
+                sourceMappingURL: './netEase.min.map'
             },
             dist: {
                 files: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         },
         /*http://ued.fanxing.com/javascriptdan-yuan-ce-shi-kuang-jia-jasmine/*/
         jasmine: {
-            src: ['webapp/lib/jquery.js', 'webapp/lib/lodash-2.4.1.js', 'build/dist/net_ease.js'],
+            src: ['webapp/lib/jquery.js', 'webapp/lib/lodash-2.4.1.js', 'build/dist/netEase.js'],
             options: {
                 specs: 'test/**/*Spec.js',
                 helpers: 'test/**/*Helper.js',
